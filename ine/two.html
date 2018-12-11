@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        <h1>这是一个段落。</h1>
+        <p>这是另一个段落。</p>
+        <button>ss</button>
+    </div>
+    <script>
+        var h1 = document.getElementsByTagName('h1')[0]
+        var p = document.getElementsByTagName('p')[0]
+        var btn = document.getElementsByTagName('button')[0]
+        var div = document.getElementsByTagName('div')[0]
+        console.log(div)
+        
+
+// div.onclick=function(e){
+//     e.target.remove()
+// }
+//         div.onclick = (e) => {
+//            console.log(e.target)
+//         e.target.remove()
+//         }
+
+        // p.onclick=()=>{
+        //     div.removeChild(p)
+        // }
+        
+        var name = 'sally';
+
+        function sayName() {
+            return this.name;
+        }
+
+        function sayName2() {
+            return this.name
+        }
+div.addEventListener('click',function(e){
+    
+  if(e.target.nodeName=='P'){
+    e.target.remove()
+  }
+  if(e.target.nodeName=='H1'){
+    e.target.remove()
+  }
+
+},false)
+        var o = {
+            'name': 'John',
+            sayName: sayName,
+            sayName2: sayName2.bind(window)
+        };
+        console.log(o.sayName()); //John
+        console.log(o.sayName2()); //sally 
+
+        //console.log(btn)
+    </script>
+</body>
+
+</html>
